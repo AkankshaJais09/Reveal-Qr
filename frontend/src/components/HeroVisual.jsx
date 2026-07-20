@@ -4,162 +4,215 @@ import {
   Truck,
   MapPin,
   ShieldCheck,
+  Lock,
 } from "lucide-react";
 
 const HeroVisual = () => {
   return (
-    <div className="relative flex justify-center lg:justify-end">
+    <div className="mt-6 flex justify-center lg:justify-end">
 
-      {/* Background Glow */}
-      <div className="absolute top-12 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
+      <div className="relative">
 
-      <div className="relative animate-float">
+        {/* Privacy Ribbon */}
 
-        {/* Privacy Badge */}
-        <div className="absolute -top-5 left-4 sm:-left-10 sm:top-8 z-20 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-xl">
-          🔒 Privacy Protected
+        <div className="absolute -top-4 left-6 z-30 rounded-md bg-[#E53935] px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-xl">
+          Privacy Protected
         </div>
 
-        {/* Live Badge */}
-        <div className="absolute  -bottom-5 right-4 sm:right-0 z-20 rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-xl">
-          🚚 Live Shipment
-        </div>
+        {/* Shipping Label */}
 
-        {/* Parcel */}
-        <div className="relative rounded-3xl bg-[#C69258] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.45)]">
+        <div className="relative w-[400px] -rotate-[2deg] rounded-xl bg-white p-6 shadow-[0_30px_70px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-rotate-1 hover:scale-[1.02]">
 
-          {/* Tape */}
-          <div className="absolute left-1/2 top-0 h-full w-10 -translate-x-1/2 bg-[#EED49A]"></div>
+          {/* Header */}
 
-          {/* Label */}
-          <div className="relative w-[300px] sm:w-[340px] rounded-2xl bg-white p-5 sm:p-6 shadow-2xl">
+          <div className="flex items-center justify-between border-b border-gray-200 pb-4">
 
-            {/* Fold Corner */}
-            <div className="absolute right-0 top-0 h-8 w-8 rounded-bl-xl bg-slate-100"></div>
+            <div className="flex items-center gap-3">
 
-            {/* Header */}
-            <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-3">
+              <Package
+                size={22}
+                className="text-[#E53935]"
+              />
+
+              <div>
+
+                <h2 className="text-base font-bold text-gray-900">
+                  RevealQR
+                </h2>
+
+                <p className="text-[11px] uppercase tracking-[3px] text-gray-500">
+                  Secure Shipping Label
+                </p>
+
+              </div>
+
+            </div>
+
+            <Truck
+              size={20}
+              className="text-gray-500"
+            />
+
+          </div>
+
+          {/* Tracking */}
+
+          <div className="mt-5">
+
+            <p className="text-xs font-semibold uppercase tracking-[3px] text-gray-400">
+              Tracking Number
+            </p>
+
+            <h3 className="mt-1 text-2xl font-extrabold text-gray-900">
+              RQ-2026-001
+            </h3>
+
+          </div>
+
+          {/* Barcode */}
+
+          <div className="mt-5">
+
+            <div className="h-10 rounded bg-[repeating-linear-gradient(90deg,#111_0px,#111_2px,#fff_2px,#fff_4px)]"></div>
+
+            <p className="mt-2 text-center text-xs text-gray-500">
+              5482 3948 1290
+            </p>
+
+          </div>
+
+          {/* Recipient */}
+
+          <div className="mt-5 space-y-3">
+
+            <div className="flex justify-between">
+
+              <span className="text-sm text-gray-500">
+                Recipient
+              </span>
+
+              <span className="font-semibold tracking-widest">
+                **************
+              </span>
+
+            </div>
+
+            <div className="flex justify-between">
+
+              <span className="text-sm text-gray-500">
+                Destination
+              </span>
 
               <div className="flex items-center gap-2">
 
-                <Package className="text-cyan-600" size={22} />
-
-                <div>
-
-                  <h2 className="font-bold text-slate-800">
-                    RevealQR
-                  </h2>
-
-                  <p className="text-xs text-gray-500">
-                    Secure Shipping Label
-                  </p>
-
-                </div>
-
-              </div>
-
-              <Truck className="text-slate-500" size={22} />
-
-            </div>
-
-            {/* Tracking */}
-            <div className="mb-5">
-
-              <p className="text-xs uppercase tracking-widest text-gray-400">
-                Tracking ID
-              </p>
-
-              <h3 className="text-2xl font-bold text-slate-900">
-                RQ-2026-001
-              </h3>
-
-            </div>
-
-            {/* Barcode */}
-            <div className="mb-5">
-
-              <div className="h-14 rounded bg-[repeating-linear-gradient(90deg,#111_0px,#111_2px,#fff_2px,#fff_4px)]"></div>
-
-              <p className="mt-1 text-center text-xs text-gray-500">
-                5482 3948 1290
-              </p>
-
-            </div>
-
-            {/* QR */}
-            <div className="mb-6 flex justify-center">
-
-              <div className="rounded-xl border-2 border-dashed border-slate-300 p-3 transition-transform duration-300 hover:scale-105">
-
-                <QRCode
-                  value="https://revealqr.vercel.app"
-                  size={120}
+                <MapPin
+                  size={14}
+                  className="text-[#E53935]"
                 />
 
+                <span className="font-semibold tracking-widest">
+                  **************
+                </span>
+
               </div>
 
             </div>
 
-            {/* Details */}
-            <div className="space-y-4">
+          </div>
 
-              <div className="flex justify-between text-sm">
+          {/* QR + Security */}
 
-                <span className="text-gray-500">
-                  Destination
-                </span>
+          <div className="mt-6 flex items-center justify-between gap-4">
 
-                <div className="flex items-center gap-1">
+            <div className="rounded-lg border border-gray-300 bg-white p-3">
 
-                  <MapPin
-                    size={15}
-                    className="text-red-500"
+              <QRCode
+                value="https://revealqr.vercel.app"
+                size={115}
+              />
+
+            </div>
+
+            <div className="flex flex-1 flex-col gap-3">
+
+              <div className="rounded-lg border border-green-200 bg-green-50 p-3">
+
+                <div className="flex items-center gap-3">
+
+                  <Lock
+                    size={20}
+                    className="text-green-600"
                   />
 
-                  <span className="font-medium">
-                    ************
-                  </span>
+                  <div>
+
+                    <h4 className="text-sm font-semibold text-gray-800">
+                      Protected
+                    </h4>
+
+                    <p className="text-[11px] text-gray-500">
+                      Visible after authorization
+                    </p>
+
+                  </div>
 
                 </div>
 
               </div>
 
-              <div className="flex justify-between text-sm">
+              <div className="rounded-lg border border-red-100 bg-red-50 p-3">
 
-                <span className="text-gray-500">
-                  Courier
-                </span>
+                <div className="flex items-center gap-3">
 
-                <span className="font-medium">
-                  Reveal Express
-                </span>
+                  <ShieldCheck
+                    size={20}
+                    className="text-[#E53935]"
+                  />
 
-              </div>
+                  <div>
 
-              <div className="flex justify-between text-sm">
+                    <h4 className="text-sm font-semibold text-gray-800">
+                      Role-Based Access
+                    </h4>
 
-                <span className="text-gray-500">
-                  Status
-                </span>
+                    <p className="text-[11px] text-gray-500">
+                      Warehouse • Hub • Delivery
+                    </p>
 
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                  In Transit
-                </span>
+                  </div>
+
+                </div>
 
               </div>
 
             </div>
 
-            {/* Privacy Strip */}
-            <div className="mt-6 flex items-center gap-2 rounded-xl bg-cyan-50 p-3">
+          </div>
+                    {/* Footer */}
+
+          <div className="mt-6 flex items-center justify-between border-t border-gray-200 pt-5">
+
+            <div>
+
+              <p className="text-xs uppercase tracking-[3px] text-gray-400">
+                Status
+              </p>
+
+              <span className="mt-2 inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                In Transit
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-2">
 
               <ShieldCheck
                 size={18}
-                className="text-cyan-600"
+                className="text-[#E53935]"
               />
 
-              <span className="text-sm font-medium text-cyan-700">
-                Customer information stays hidden until authorized.
+              <span className="text-sm font-semibold text-gray-700">
+                Customer Data Hidden
               </span>
 
             </div>
