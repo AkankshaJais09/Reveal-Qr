@@ -1,125 +1,165 @@
-import QRCode from "react-qr-code";
-import { Package, Truck, MapPin } from "lucide-react";
+\\import QRCode from "react-qr-code";
+import {
+  Package,
+  Truck,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
 
 const HeroVisual = () => {
   return (
-    <div className="flex justify-center lg:justify-end">
+    <div className="relative flex justify-center lg:justify-end">
 
-      {/* Parcel */}
-      <div className="relative rounded-3xl bg-[#C69258] p-6 shadow-2xl">
+      {/* Background Glow */}
+      <div className="absolute top-12 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
-        {/* Parcel Tape */}
-        <div className="absolute left-1/2 top-0 h-full w-10 -translate-x-1/2 bg-[#EED49A]" />
+      <div className="relative">
 
-        {/* Shipping Label */}
-        <div className="relative w-[340px] rounded-2xl bg-white p-6 shadow-xl">
+        {/* Privacy Badge */}
+        <div className="absolute -left-10 top-8 z-20 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-xl">
+          🔒 Privacy Protected
+        </div>
 
-          {/* Header */}
-          <div className="mb-5 flex items-center justify-between border-b border-gray-200 pb-3">
+        {/* Live Badge */}
+        <div className="absolute -bottom-5 right-0 z-20 rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-xl">
+          🚚 Live Shipment
+        </div>
 
-            <div className="flex items-center gap-2">
+        {/* Parcel */}
+        <div className="relative rounded-3xl bg-[#C69258] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
 
-              <Package size={22} className="text-cyan-600" />
+          {/* Tape */}
+          <div className="absolute left-1/2 top-0 h-full w-10 -translate-x-1/2 bg-[#EED49A]"></div>
 
-              <div>
-                <h2 className="font-bold text-slate-800">
-                  RevealQR
-                </h2>
+          {/* Label */}
+          <div className="relative w-[340px] rounded-2xl bg-white p-6 shadow-2xl">
 
-                <p className="text-xs text-gray-500">
-                  Secure Shipping Label
-                </p>
+            {/* Fold Corner */}
+            <div className="absolute right-0 top-0 h-8 w-8 rounded-bl-xl bg-slate-100"></div>
+
+            {/* Header */}
+            <div className="mb-5 flex items-center justify-between border-b border-slate-200 pb-3">
+
+              <div className="flex items-center gap-2">
+
+                <Package className="text-cyan-600" size={22} />
+
+                <div>
+
+                  <h2 className="font-bold text-slate-800">
+                    RevealQR
+                  </h2>
+
+                  <p className="text-xs text-gray-500">
+                    Secure Shipping Label
+                  </p>
+
+                </div>
+
+              </div>
+
+              <Truck className="text-slate-500" size={22} />
+
+            </div>
+
+            {/* Tracking */}
+            <div className="mb-5">
+
+              <p className="text-xs uppercase tracking-widest text-gray-400">
+                Tracking ID
+              </p>
+
+              <h3 className="text-2xl font-bold text-slate-900">
+                RQ-2026-001
+              </h3>
+
+            </div>
+
+            {/* Barcode */}
+            <div className="mb-5">
+
+              <div className="h-14 rounded bg-[repeating-linear-gradient(90deg,#111_0px,#111_2px,#fff_2px,#fff_4px)]"></div>
+
+              <p className="mt-1 text-center text-xs text-gray-500">
+                5482 3948 1290
+              </p>
+
+            </div>
+
+            {/* QR */}
+            <div className="mb-6 flex justify-center">
+
+              <div className="rounded-xl border-2 border-dashed border-slate-300 p-3">
+
+                <QRCode
+                  value="https://revealqr.vercel.app"
+                  size={120}
+                />
+
               </div>
 
             </div>
 
-            <Truck size={22} className="text-slate-500" />
+            {/* Details */}
+            <div className="space-y-4">
 
-          </div>
+              <div className="flex justify-between text-sm">
 
-          {/* Tracking */}
+                <span className="text-gray-500">
+                  Destination
+                </span>
 
-          <div className="mb-5">
+                <div className="flex items-center gap-1">
 
-            <p className="text-xs uppercase tracking-widest text-gray-400">
-              Tracking ID
-            </p>
+                  <MapPin
+                    size={15}
+                    className="text-red-500"
+                  />
 
-            <h3 className="text-xl font-bold text-slate-900">
-              RQ-2026-001
-            </h3>
+                  <span className="font-medium">
+                    ************
+                  </span>
 
-          </div>
+                </div>
 
-          {/* Barcode */}
+              </div>
 
-          <div className="mb-5">
+              <div className="flex justify-between text-sm">
 
-            <div className="h-14 rounded bg-[repeating-linear-gradient(90deg,#111_0px,#111_2px,#fff_2px,#fff_4px)]"></div>
+                <span className="text-gray-500">
+                  Courier
+                </span>
 
-            <p className="mt-1 text-center text-xs text-gray-500">
-              5482 3948 1290
-            </p>
+                <span className="font-medium">
+                  Reveal Express
+                </span>
 
-          </div>
+              </div>
 
-          {/* QR */}
+              <div className="flex justify-between text-sm">
 
-          <div className="mb-6 flex justify-center">
+                <span className="text-gray-500">
+                  Status
+                </span>
 
-            <div className="rounded-xl border border-gray-300 p-3">
-
-              <QRCode
-                value="https://revealqr.vercel.app"
-                size={120}
-              />
-
-            </div>
-
-          </div>
-
-          {/* Details */}
-
-          <div className="space-y-3 text-sm">
-
-            <div className="flex justify-between">
-
-              <span className="text-gray-500">
-                Destination
-              </span>
-
-              <div className="flex items-center gap-1">
-
-                <MapPin size={15} className="text-red-500" />
-
-                <span className="font-medium text-slate-700">
-                  ************
+                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                  In Transit
                 </span>
 
               </div>
 
             </div>
 
-            <div className="flex justify-between">
+            {/* Privacy Strip */}
+            <div className="mt-6 flex items-center gap-2 rounded-xl bg-cyan-50 p-3">
 
-              <span className="text-gray-500">
-                Courier
-              </span>
+              <ShieldCheck
+                size={18}
+                className="text-cyan-600"
+              />
 
-              <span className="font-medium text-slate-700">
-                Reveal Express
-              </span>
-
-            </div>
-
-            <div className="flex justify-between">
-
-              <span className="text-gray-500">
-                Status
-              </span>
-
-              <span className="font-semibold text-green-600">
-                In Transit
+              <span className="text-sm font-medium text-cyan-700">
+                Customer information stays hidden until authorized.
               </span>
 
             </div>
