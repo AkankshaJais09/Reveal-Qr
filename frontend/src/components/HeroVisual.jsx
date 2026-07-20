@@ -1,4 +1,4 @@
-\\import QRCode from "react-qr-code";
+import QRCode from "react-qr-code";
 import {
   Package,
   Truck,
@@ -13,26 +13,26 @@ const HeroVisual = () => {
       {/* Background Glow */}
       <div className="absolute top-12 h-80 w-80 rounded-full bg-cyan-400/20 blur-3xl"></div>
 
-      <div className="relative">
+      <div className="relative animate-float">
 
         {/* Privacy Badge */}
-        <div className="absolute -left-10 top-8 z-20 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-xl">
+        <div className="absolute -top-5 left-4 sm:-left-10 sm:top-8 z-20 rounded-xl bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-xl">
           🔒 Privacy Protected
         </div>
 
         {/* Live Badge */}
-        <div className="absolute -bottom-5 right-0 z-20 rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-xl">
+        <div className="absolute  -bottom-5 right-4 sm:right-0 z-20 rounded-xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-xl">
           🚚 Live Shipment
         </div>
 
         {/* Parcel */}
-        <div className="relative rounded-3xl bg-[#C69258] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.35)]">
+        <div className="relative rounded-3xl bg-[#C69258] p-6 shadow-[0_30px_60px_rgba(0,0,0,0.35)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.45)]">
 
           {/* Tape */}
           <div className="absolute left-1/2 top-0 h-full w-10 -translate-x-1/2 bg-[#EED49A]"></div>
 
           {/* Label */}
-          <div className="relative w-[340px] rounded-2xl bg-white p-6 shadow-2xl">
+          <div className="relative w-[300px] sm:w-[340px] rounded-2xl bg-white p-5 sm:p-6 shadow-2xl">
 
             {/* Fold Corner */}
             <div className="absolute right-0 top-0 h-8 w-8 rounded-bl-xl bg-slate-100"></div>
@@ -89,7 +89,7 @@ const HeroVisual = () => {
             {/* QR */}
             <div className="mb-6 flex justify-center">
 
-              <div className="rounded-xl border-2 border-dashed border-slate-300 p-3">
+              <div className="rounded-xl border-2 border-dashed border-slate-300 p-3 transition-transform duration-300 hover:scale-105">
 
                 <QRCode
                   value="https://revealqr.vercel.app"
