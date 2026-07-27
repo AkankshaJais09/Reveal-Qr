@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 
 const Problem = () => {
   return (
-    <section className="bg-[#F7F8FA] py-20 px-6">
+    <section id="how it works" className="bg-[#F7F8FA] py-20 px-6">
       <div className="mx-auto max-w-4xl">
 
         {/* Heading */}

@@ -51,7 +51,10 @@ const CTA = () => {
             </div>
 
             {/* Single CTA */}
-            <button className="flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-[14px] font-bold text-[#7F1D1D] transition-all hover:-translate-y-0.5 hover:bg-red-50 shadow-lg">
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-[14px] font-bold text-[#7F1D1D] transition-all hover:-translate-y-0.5 hover:bg-red-50 shadow-lg"
+            >
               Request Demo <ArrowRight size={16} />
             </button>
 

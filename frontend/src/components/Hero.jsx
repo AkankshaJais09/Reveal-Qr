@@ -34,10 +34,16 @@ const Hero = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-lg bg-[#E53935] px-7 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-red-900/30 transition-all hover:-translate-y-0.5 hover:bg-[#C62828]">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="rounded-lg bg-[#E53935] px-7 py-3.5 text-[14px] font-semibold text-white shadow-lg shadow-red-900/30 transition-all hover:-translate-y-0.5 hover:bg-[#C62828]"
+              >
                 Request Demo
               </button>
-              <button className="flex items-center gap-2 rounded-lg border border-white/20 px-7 py-3.5 text-[14px] font-semibold text-white transition-all hover:bg-white/10">
+              <button
+                onClick={() => document.getElementById('privacy')?.scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-center gap-2 rounded-lg border border-white/20 px-7 py-3.5 text-[14px] font-semibold text-white transition-all hover:bg-white/10"
+              >
                 Explore Workflow <ArrowRight size={16} />
               </button>
             </div>

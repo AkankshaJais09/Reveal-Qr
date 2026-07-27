@@ -83,7 +83,7 @@ const Workflow = () => {
   const Icon = stage.icon;
 
   return (
-    <section className="bg-[#0B0D14] py-24 text-white">
+    <section id="privacy" className="bg-[#0B0D14] py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
 
         {/* Heading */}
