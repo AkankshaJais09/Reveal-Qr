@@ -2,19 +2,10 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import {
-  ShieldCheck, Eye, EyeOff,
+  Eye, EyeOff,
   Package, Building2, Truck, UserPlus,
 } from "lucide-react";
-
 const roles = [
-  {
-    id: "admin",
-    label: "Admin",
-    icon: ShieldCheck,
-    desc: "Full system access",
-    activeColor: "border-[#E53935] bg-[#E53935]/10",
-    iconColor: "bg-[#E53935]/10 text-[#E53935]",
-  },
   {
     id: "warehouse",
     label: "Warehouse",

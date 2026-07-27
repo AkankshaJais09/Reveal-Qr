@@ -7,6 +7,9 @@ const generateToken = (id) =>
 export const register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
+    if (role === "admin") {
+      return res.status(403).json({ message: "Admin accounts cannot be self-registered." });
+    }
     const exists = await User.findOne({ email });
     if (exists) return res.status(400).json({ message: "Email already exists" });
 
