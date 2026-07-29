@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import {
   Eye, EyeOff,
-  Package, Building2, Truck, UserPlus,
+  Package, Building2, Truck, UserPlus, ShieldCheck,
 } from "lucide-react";
 const roles = [
   {
