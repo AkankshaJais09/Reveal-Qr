@@ -2,8 +2,6 @@
 
 > Secure shipping labels powered by dynamic QR codes that reveal customer information only to authorized personnel at the correct delivery stage.
 
-![RevealQR Banner](./public/logo.png)
-
 ---
 
 ## 🔐 What is RevealQR?
@@ -19,8 +17,8 @@ Traditional shipping labels print customer names, phone numbers, and addresses f
 
 ## 🚀 Live Demo
 
-- **Frontend:** [revealqr.vercel.app](https://revealqr.vercel.app)
-- **Backend API:** [revealqr-api.render.com](https://revealqr-api.render.com)
+- **Frontend:** [revealqr.vercel.app](https://reveal-qr.vercel.app/)
+- **Backend API:** [revealqr-api.render.com](https://revealqr-backend.onrender.com)
 
 ---
 
